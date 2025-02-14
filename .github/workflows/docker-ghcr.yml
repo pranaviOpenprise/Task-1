@@ -36,4 +36,3 @@ jobs:
           BRANCH_TAG=${{ env.BRANCH_NAME }}
 
           docker push $IMAGE_NAME:$BRANCH_TAG
-          docker push $IMAGE_NAME:latest  # Optional: Push latest tag
