@@ -3,7 +3,8 @@ name: Build and Push Docker Image to ECR
 on:
   push:
     branches:
-      - "*"  
+      - main
+      - pranavi
 
 jobs:
   build-and-push:
