@@ -33,10 +33,10 @@ jobs:
 
       - name: Tag Docker Image
         run: |
-          docker tag app:latest ${{ secrets.ECR_REGISTRY }}/task1:${{ env.BRANCH_NAME }}
-          docker tag app:latest ${{ secrets.ECR_REGISTRY }}/task1:latest
+          docker tag app:latest ${{ secrets.ECR_REGISTRY }}/task-1:${{ env.BRANCH_NAME }}
+          docker tag app:latest ${{ secrets.ECR_REGISTRY }}/task-1:latest
 
       - name: Push Docker Image to ECR
         run: |
-          docker push ${{ secrets.ECR_REGISTRY }}/task1:${{ env.BRANCH_NAME }}
-          docker push ${{ secrets.ECR_REGISTRY }}/task1:latest
+          docker push ${{ secrets.ECR_REGISTRY }}/task-1:${{ env.BRANCH_NAME }}
+          docker push ${{ secrets.ECR_REGISTRY }}/task-1:latest
