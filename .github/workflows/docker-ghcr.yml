@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - main
-      - dev
-      - staging
+      - pranavi
 
 jobs:
   build-and-push:
