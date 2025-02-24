@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  flask_server:
+    build: .
+    container_name: flask_server
+    networks:
+      - shared_network
+    volumes:
+      - shared_volume:/data
+    ports:
+      - "8000:8000"
+
+  nginx_server:
+    image: nginx:latest
+    container_name: nginx_server
+    networks:
+      - shared_network
+    volumes:
+      - shared_volume:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - flask_server
+
+networks:
+  shared_network:
+
+volumes:
+  shared_volume:
